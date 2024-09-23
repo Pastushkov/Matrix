@@ -9,10 +9,9 @@ import { Cell } from "../types";
 import trashIcon from "../../public/assets/trash.svg";
 import plusIcon from "../../public/assets/plus.svg";
 import styles from "./MatrixTable.module.css";
-const X = 3;
 
 export const MatrixTable = () => {
-  const { matrix, setMatrix } = useMatrix();
+  const { matrix, setMatrix, X } = useMatrix();
   const [highlightedCells, setHighlightedCells] = useState<number[]>([]);
   const [rowPercentages, setRowPercentages] = useState<number[]>([]);
   const [hoveredRowIndex, setHoveredRowIndex] = useState<number | null>(null);
@@ -27,7 +26,7 @@ export const MatrixTable = () => {
   };
 
   const handleCellHover = (hoveredCell: Cell) => {
-    const nearestCells = findNearestCells(matrix, hoveredCell.amount, X);
+    const nearestCells = findNearestCells(matrix, hoveredCell.amount, +X + 1);
     setHighlightedCells(nearestCells.map((cell) => cell.id));
   };
 

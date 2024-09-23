@@ -10,10 +10,6 @@ export const generateMatrix = (M: number, N: number): Cell[][] => {
   );
 };
 
-// export const calculateRowSums = (matrix: Cell[][]): number[] => {
-//   return matrix.map((row) => row.reduce((sum, cell) => sum + cell.amount, 0));
-// };
-
 export const calculateColumnPercentiles = (matrix: Cell[][]): number[] => {
   const columns = matrix[0].length;
   const columnValues: number[][] = Array.from(

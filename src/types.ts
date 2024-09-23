@@ -5,4 +5,6 @@ export type Cell = {
 export type MatrixContextType = {
   matrix: Cell[][];
   setMatrix: (matrix: Cell[][]) => void;
+  X: number | string;
+  setX: React.Dispatch<React.SetStateAction<number | string>>;
 };

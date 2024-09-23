@@ -4,7 +4,7 @@ import { generateMatrix } from "../services/matrix-service";
 import styles from "./MatrixInput.module.css";
 
 export const MatrixInput = () => {
-  const { setMatrix } = useMatrix();
+  const { setMatrix, X, setX } = useMatrix();
   const [M, setM] = useState<number | string>("");
   const [N, setN] = useState<number | string>("");
 
@@ -30,19 +30,23 @@ export const MatrixInput = () => {
 
   return (
     <div className={styles.input_wrapper}>
+      <label htmlFor="rows-input">Rows</label>
       <input
+        id="rows-input"
         className={styles.input}
         value={M}
         onChange={handleInputChange(setM)}
-        placeholder="Rows (M)"
+        placeholder="M"
         max={100}
         min={0}
       />
+      <label htmlFor="columns-input">Columns</label>
       <input
+        id="columns-input"
         className={styles.input}
         value={N}
         onChange={handleInputChange(setN)}
-        placeholder="Columns (N)"
+        placeholder="N"
         max={100}
         min={0}
       />
@@ -53,6 +57,16 @@ export const MatrixInput = () => {
       >
         Generate Matrix
       </button>
+      <label htmlFor="highlight-input">Cells to highlight</label>
+      <input
+        id="highlight-input"
+        className={styles.input}
+        value={X}
+        onChange={handleInputChange(setX)}
+        placeholder="X"
+        max={100}
+        min={0}
+      />
     </div>
   );
 };
