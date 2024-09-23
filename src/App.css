@@ -1,0 +1,9 @@
+body {
+  width: calc(100%-15px);
+  height: 100%;
+  background-color: #f9f5ff;
+}
+
+.wrapper {
+  padding: 20px;
+}
