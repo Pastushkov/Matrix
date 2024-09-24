@@ -94,7 +94,7 @@ export const MatrixTable = () => {
                   </td>
                 ))}
                 <td
-                  className={`${styles.cell} ${styles.pointer}`}
+                  className={`${styles.cell} ${styles.cursor_default}`}
                   onMouseEnter={() => handleSumHover(rowIndex)}
                   onMouseLeave={() => setRowPercentages([])}
                 >
@@ -115,7 +115,10 @@ export const MatrixTable = () => {
           })}
           <tr>
             {columnPercentiles.map((value, colIdx) => (
-              <td key={colIdx} className={styles.cell}>
+              <td
+                key={colIdx}
+                className={`${styles.cell} ${styles.cursor_default}`}
+              >
                 {value}
               </td>
             ))}

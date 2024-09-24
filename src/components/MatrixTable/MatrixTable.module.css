@@ -15,13 +15,15 @@
   text-align: center;
   border: 1px solid black;
   min-width: 50px;
+  cursor: pointer;
 }
 
 .action_cell {
   vertical-align: middle;
   width: 50px;
 }
-.action_cell:hover{
+
+.action_cell:hover {
   background-color: var(--purple-300);
 }
 
@@ -66,4 +68,8 @@ tr:nth-child(even) {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.cursor_default {
+  cursor: default;
 }
