@@ -1,4 +1,4 @@
-@import "../colors.css";
+@import "../../colors.css";
 
 .input {
   width: 80px;
@@ -27,4 +27,8 @@
 .button:disabled {
   cursor: not-allowed;
   background-color: var(--purple-300);
+}
+
+.button:hover {
+  background-color: var(--purple-500);
 }

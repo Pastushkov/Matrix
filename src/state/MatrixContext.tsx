@@ -12,7 +12,7 @@ export const useMatrix = () => {
 
 export const MatrixProvider = ({ children }: { children: ReactNode }) => {
   const [matrix, setMatrix] = useState<Cell[][]>([]);
-  const [X, setX] = useState<number | string>("");
+  const [X, setX] = useState<number | string>(1);
   return (
     <MatrixContext.Provider value={{ matrix, setMatrix, X, setX }}>
       {children}

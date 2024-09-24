@@ -1,13 +1,13 @@
-import { useMatrix } from "../state/MatrixContext";
+import { useMatrix } from "../../state/MatrixContext";
 import {
   calculateColumnPercentiles,
   findNearestCells,
   generateMatrix,
-} from "../services/matrix-service";
+} from "../../services/matrix-service";
 import { useState } from "react";
-import { Cell } from "../types";
-import trashIcon from "../../public/assets/trash.svg";
-import plusIcon from "../../public/assets/plus.svg";
+import { Cell } from "../../types";
+import trashIcon from "../../../public/assets/trash.svg";
+import plusIcon from "../../../public/assets/plus.svg";
 import styles from "./MatrixTable.module.css";
 
 export const MatrixTable = () => {
@@ -102,14 +102,11 @@ export const MatrixTable = () => {
                 </td>
                 <td className={`${styles.cell} ${styles.action_cell}`}>
                   <div className={styles.icon_wrapper}>
-                    <div
+                    <img
+                      src={trashIcon}
+                      alt="delete row"
                       className={styles.trash}
                       onClick={() => handleRemoveRow(rowIndex)}
-                      style={{
-                        WebkitMask: `url(${trashIcon})`,
-                        WebkitMaskSize: "contain",
-                        WebkitMaskRepeat: "no-repeat",
-                      }}
                     />
                   </div>
                 </td>
@@ -127,14 +124,7 @@ export const MatrixTable = () => {
       </table>
 
       <button className={styles.button} onClick={handleAddRow}>
-        <div
-          style={{
-            WebkitMask: `url(${plusIcon})`,
-            WebkitMaskSize: "contain",
-            WebkitMaskRepeat: "no-repeat",
-          }}
-          className={styles.plus}
-        />
+        <img src={plusIcon} alt="add row" className={styles.plus} />
         <span>New row</span>
       </button>
     </>

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useMatrix } from "../state/MatrixContext";
-import { generateMatrix } from "../services/matrix-service";
+import { useMatrix } from "../../state/MatrixContext";
+import { generateMatrix } from "../../services/matrix-service";
 import styles from "./MatrixInput.module.css";
 
 export const MatrixInput = () => {
